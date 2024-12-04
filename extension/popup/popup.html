@@ -11,15 +11,64 @@
 <body>
     <h1>Simply</h1>
     <textarea id="input-text" placeholder="Enter or select text to process..."></textarea>
-    <div>
+
+    <div class="button-group">
         <button id="clear-btn">Clear</button>
     </div>
-    <div>
-        <button id="summarize-btn">Summarize</button>
-        <button id="translate-btn">Translate</button>
-        <button id="rewrite-btn">Rewrite</button>
+
+    <div class="action-container">
+        <div class="action-buttons">
+            <button id="summarize-btn" class="action-btn" data-action="summarize">Summarize</button>
+            <button id="translate-btn" class="action-btn" data-action="translate">Translate</button>
+            <button id="rewrite-btn" class="action-btn" data-action="rewrite">Rewrite</button>
+        </div>
     </div>
-    <div id="output" class="output"></div>
+
+    <div id="settings-container" class="settings-container" style="display: none;">
+        <div class="setting-group">
+            <label>Type:</label>
+            <select id="summary-type">
+                <option value="key-points">Key Points</option>
+                <option value="tl;dr">TL;DR</option>
+                <option value="teaser">Teaser</option>
+                <option value="headline">Headline</option>
+            </select>
+        </div>
+
+        <div class="setting-group">
+            <label>Format:</label>
+            <select id="summary-format">
+                <option value="plain-text">Plain Text</option>
+                <option value="markdown">Markdown</option>
+            </select>
+        </div>
+
+        <div class="setting-group">
+            <label>Length:</label>
+            <div class="length-slider-container">
+                <input type="range" id="summary-length" min="0" max="2" step="1" value="1">
+                <div class="length-labels">
+                    <span class="length-label">Short</span>
+                    <span class="length-label">Medium</span>
+                    <span class="length-label">Long</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="setting-group">
+            <label>Context:</label>
+            <textarea id="context-input" placeholder="Enter context for key points..."></textarea>
+        </div>
+
+        <button id="go-btn" class="go-button">Go</button>
+    </div>
+
+    <div class="output-container">
+        <div id="output" class="output"></div>
+        <button id="copy-btn" class="copy-btn">
+            <span class="copy-icon">&#x2398;</span> Copy
+        </button>
+    </div>
     <script src="popup.js"></script>
 </body>
 

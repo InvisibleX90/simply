@@ -2,7 +2,7 @@
     "name": "Simply",
     "description": "Extension to simplify your life",
     "version": "1.0",
-    "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
+    "permissions": ["activeTab", "scripting", "storage", "contextMenus", "clipboardWrite"],
     "host_permissions": ["<all_urls>"],
     "background": {
         "service_worker": "background.js"
